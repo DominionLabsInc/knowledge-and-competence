@@ -21,7 +21,7 @@ competence estimate.
 
 | What | Result | Data |
 |---|---|---|
-| The five hypotheses, re-run 17 September 2026 | 16 of 16 checks pass. Teaching three connected facts moved declarative coverage 0.2293 to 0.2925 with procedural competence unchanged at 0.500; a missing in-subject relation registered exactly one acknowledged unknown, with two negative controls firing no false gap | [`data/dom-kg-01.json`](data/dom-kg-01.json) |
+| The five hypotheses, re-run 18 September 2026 | 16 of 16 checks pass. Teaching three connected facts moved declarative coverage 0.2293 to 0.2925 with procedural competence unchanged at 0.500; a missing in-subject relation registered exactly one acknowledged unknown, with two negative controls firing no false gap | [`data/dom-kg-01.json`](data/dom-kg-01.json) |
 | Behaviour under a third deficit: evidence that does not determine a hypothesis | across 32 inductions, asserting on any one surviving hypothesis gives 26 assertions of false cases out of 192; asserting only what every hypothesis supports gives 0, while still asserting 73% of true cases | [`data/undetermined-evidence.json`](data/undetermined-evidence.json) |
 | What closes that deficit | the one case the system asks for closes it in 16 of 16 inductions, in a mean of 2.6 rounds; randomly chosen further examples close 1 of 16 | [`data/closing-undetermined-evidence.json`](data/closing-undetermined-evidence.json) |
 
