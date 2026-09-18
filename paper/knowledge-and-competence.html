@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preload" as="image" href="assets/3.svg" fetchpriority="high">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowing a Fact vs. Being Able to Act | Dominion Labs</title>
+<meta name="description" content="A taught system holds two independent kinds of mastery, facts it knows and operations it can perform. We measure them as orthogonal axes so the system can tell which kind of gap it faces.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Knowing a Fact vs. Being Able to Act">
+<meta property="og:description" content="A taught system holds two independent kinds of mastery, facts it knows and operations it can perform. We measure them as orthogonal axes so the system can tell which kind of gap it faces.">
+<meta property="og:url" content="https://dmnlabs.org/research/knowledge-and-competence/">
+<link rel="stylesheet" href="assets/paper.css">
+<style>
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.9em}
+table.data{width:100%;border-collapse:collapse;margin:1.3em 0;font-size:.95em}
+table.data th,table.data td{text-align:left;padding:.5em .7em;border-bottom:1px solid var(--rule);vertical-align:top}
+table.data thead th{font-weight:600;color:var(--fg);border-bottom:2px solid var(--rule)}
+.data-wrap{overflow-x:auto}
+table.data,.data-wrap{break-inside:avoid;page-break-inside:avoid}
+@media print{.skip-link{display:none!important}table.data,.data-wrap{break-inside:avoid;page-break-inside:avoid}}
+</style>
+
+
+    <!-- SEO: canonical, social card, academic citation, structured data -->
+    <link rel="canonical" href="https://dmnlabs.org/research/knowledge-and-competence/">
+    <meta name="author" content="Stefan Ragland">
+    <meta property="og:site_name" content="Dominion Labs">
+    <meta property="og:image" content="https://dmnlabs.org/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="article:published_time" content="2026-01-13">
+    <meta property="article:author" content="Stefan Ragland">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Knowing a Fact vs. Being Able to Act">
+    <meta name="twitter:description" content="A taught system holds two independent kinds of mastery, facts it knows and operations it can perform. We measure them as orthogonal axes so the system can tell which kind of gap it faces.">
+    <meta name="twitter:image" content="https://dmnlabs.org/images/og-image.png">
+    <!-- Google Scholar citation tags -->
+    <meta name="citation_title" content="Knowing a Fact vs. Being Able to Act">
+    <meta name="citation_author" content="Ragland, Stefan">
+    <meta name="citation_publication_date" content="2026/01/13">
+    <meta name="citation_online_date" content="2026/01/13">
+    <meta name="citation_technical_report_institution" content="Dominion Labs">
+    <meta name="citation_publisher" content="Dominion Labs">
+    <meta name="citation_technical_report_number" content="TR-2026-09">
+    <meta name="citation_pdf_url" content="https://dmnlabs.org/research/knowledge-and-competence.pdf">
+    <meta name="citation_abstract_html_url" content="https://dmnlabs.org/research/knowledge-and-competence/">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Knowing a Fact vs. Being Able to Act",
+  "name": "Knowing a Fact vs. Being Able to Act",
+  "description": "A taught system holds two independent kinds of mastery, facts it knows and operations it can perform. We measure them as orthogonal axes so the system can tell which kind of gap it faces.",
+  "url": "https://dmnlabs.org/research/knowledge-and-competence/",
+  "datePublished": "2026-01-13T12:00:00Z",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Stefan Ragland",
+    "url": "https://www.linkedin.com/in/stefan-ragland-a22215391/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dominion Labs",
+    "url": "https://dmnlabs.org",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dmnlabs.org/images/1.png"
+    }
+  },
+  "isPartOf": {
+    "@type": "CollectionPage",
+    "name": "Research",
+    "url": "https://dmnlabs.org/research"
+  },
+  "image": "https://dmnlabs.org/images/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dmnlabs.org/research/knowledge-and-competence/"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://dmnlabs.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Research",
+      "item": "https://dmnlabs.org/research"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Knowing a Fact vs. Being Able to Act",
+      "item": "https://dmnlabs.org/research/knowledge-and-competence/"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+<div class="paper-nav"><a href="https://dmnlabs.org/" class="paper-brand" aria-label="Dominion Labs"><img src="assets/3.svg" alt="Dominion Labs" width="338" height="129"></a><a href="https://dmnlabs.org/research">&#8592; Research</a></div>
+<main id="main" class="wrap">
+<header class="paper">
+<div class="eyebrow">Technical Report TR-2026-09</div>
+<h1>Knowing a Fact vs. Being Able to Act</h1>
+<div class="subtitle">Separating declarative knowledge gaps from procedural competence gaps in a taught reasoning system</div>
+<div class="byline">Stefan Ragland</div>
+<div class="byline">Dominion Labs Research &amp; Development</div>
+<div class="affil">Dominion Labs</div>
+<div class="affil"><a href="mailto:research@dmnlabs.org">research@dmnlabs.org</a></div>
+<div class="date">January 13, 2026</div>
+</header>
+
+<div class="abstract">
+<span class="lbl">Abstract</span>
+<p>A system that learns by being taught accumulates two distinct kinds of mastery over any subject: <em>declarative knowledge</em> (the facts it holds) and <em>procedural competence</em>: the operations it can actually carry out. A system that conflates the two misreads its own state, mistaking &#8220;I have not yet been told this fact&#8221; for &#8220;I am not competent in this area,&#8221; or the reverse. We formalize the two as independent, separately measured axes, state five falsifiable hypotheses about whether a taught reasoning system can discriminate between them and whether the axes stay orthogonal, and test them on a running symbolic system. Teaching three connected facts about a subject raised its declarative coverage (0.229 &#8594; 0.293) while leaving procedural competence exactly unchanged (0.500 &#8594; 0.500). Three hypotheses held immediately. A fourth (detecting a <em>specific</em> missing fact inside an otherwise well-developed subject) required a component the framework predicted but the implementation had not yet supplied: a detector to populate the register of acknowledged ignorance. With that detector in place all sixteen checks passed, and negative controls confirm it neither fabricates gaps where none exist nor disturbs the competence estimate. We contrast this behavior with an autoregressive language model, which represents no such boundary and therefore cannot abstain on the basis of it.</p>
+</div>
+
+<section id="s1"><h2><span class="num">1</span>Two kinds of not-knowing</h2>
+<p>Over any subject, a learning system can be strong along two different dimensions that are easy to confuse. <em>Declarative knowledge</em> is how much it knows: the facts it has been told and connected together. <em>Procedural competence</em> is what it can do: the operations it can actually execute to reach a goal. The distinction is old in the study of mind: knowing <em>that</em> versus knowing <em>how</em> [1], and, in cognitive architecture, declarative versus procedural memory [2].</p>
+<blockquote class="key">Declarative knowledge and procedural competence are separable, independently measurable properties of a taught system. Representing them as orthogonal axes lets the system diagnose <em>which</em> kind of gap it faces (a missing fact to be acquired, or a missing operation to be practiced) and abstain honestly on that basis.</blockquote>
+</section>
+
+<section id="s2"><h2><span class="num">2</span>Why conflating them fails</h2>
+<p>A missing fact and a missing operation call for opposite responses. A <em>knowledge gap</em> is closed by acquisition: being taught the fact, or looking it up. A <em>competence gap</em> is closed by practice or derivation: searching for an operation that produces the goal. Routing one to the other wastes effort and corrupts the system's estimate of what it can do: treat &#8220;I was never told this one fact&#8221; as &#8220;I am not competent in this whole area&#8221; and the system needlessly discounts real ability; treat &#8220;I cannot perform this operation&#8221; as &#8220;I just lack a fact&#8221; and it will keep asking to be told things no fact can supply.</p>
+<p>An autoregressive language model has a single channel (next-token likelihood) and no internal variable separating &#8220;I hold little information about this&#8221; from &#8220;I cannot perform this operation.&#8221; Both surface identically, as a distribution over tokens. Part of what is called hallucination is precisely the absence of this boundary: without a representation of <em>this subject's coverage</em> as distinct from <em>this operation's feasibility</em>, the model cannot know it is missing something, so it answers fluently anyway. Selective-prediction methods add an abstention head over likelihood [3]; they do not add the two-axis boundary studied here.</p>
+</section>
+
+<section id="s3"><h2><span class="num">3</span>Method: two axes, two producers</h2>
+<p><span class="runin">Declarative coverage</span> is a maturity measure over the graph of taught concepts, rising as connected facts are taught. It is a normalized score in [0,1] combining how many concepts the subject contains (size), how densely they interconnect (density), and how many distinct kinds of relation link them (variety), weighted 0.4 / 0.3 / 0.3. <span class="runin">Procedural competence</span> is a probabilistic belief that the system has learned the subject's operations; it moves only on the outcomes of attempting operations, never on being taught facts. The load-bearing property is that <em>neither producer writes the other's variable</em>.</p>
+<p><span class="runin">Deciding which gap is faced.</span> When a goal cannot be achieved, a structural diagnosis walks the chain from symbol to action and returns exactly one typed deficit. Two are central: an <em>unrepresented-predicate gap</em> (the goal concept appears nowhere in the subject&#8217;s vocabulary, so the response is to acquire a new concept) and a <em>missing-operation gap</em> (the concept is represented, but nothing the system knows produces it, so the response is to explore for an operation). Crucially, diagnosing a gap does not by itself change the competence belief: a diagnosis is not evidence of incompetence.</p>
+<p><span class="runin">The declarative twin.</span> The system carries a first-class representation of <em>acknowledged ignorance</em>: a subject-scoped question it knows it cannot answer, with an information-value and a resolution strategy. Our core addition is a detector that, for a missing relation on a <em>known, in-subject</em> concept, registers exactly such an entry (while leaving the competence belief untouched) and refuses to register anything when the subject is out of scope or the relation is already present. A registered gap is surfaced as an exploration target and converted into an <em>acquisition</em> goal (be taught, or look up), not an experiment to build an operation.</p>
+</section>
+
+<section id="s4"><h2><span class="num">4</span>Experiment</h2>
+<p>To measure the axes cleanly, a mature subject was built by teaching a small, connected, deliberately fictional taxonomy through the ordinary teaching interface (fictional terms keep the test subject isolated and deterministic). Six facts built the subject; three more connected facts were taught for the orthogonality test. Five hypotheses were then evaluated live: discrimination (H1), routing (H2), axis orthogonality (H3), declarative-gap detection with negative controls (H4), and gap pursuit (H5).</p>
+</section>
+
+<section id="s5"><h2><span class="num">5</span>Results</h2>
+<h3>5.1&ensp;The axes are orthogonal</h3>
+<figure><div class="chart-title">Teaching facts moves knowledge, not competence</div><div class="canvas"><svg class="chart" viewBox="0 0 720 330" role="img">
+<line class="grid" x1="66" y1="284.0" x2="696" y2="284.0"/>
+<text class="tick" x="58" y="288.0" text-anchor="end">0</text>
+<line class="grid" x1="66" y1="239.3" x2="696" y2="239.3"/>
+<text class="tick" x="58" y="243.3" text-anchor="end">0.1</text>
+<line class="grid" x1="66" y1="194.7" x2="696" y2="194.7"/>
+<text class="tick" x="58" y="198.7" text-anchor="end">0.2</text>
+<line class="grid" x1="66" y1="150.0" x2="696" y2="150.0"/>
+<text class="tick" x="58" y="154.0" text-anchor="end">0.3</text>
+<line class="grid" x1="66" y1="105.3" x2="696" y2="105.3"/>
+<text class="tick" x="58" y="109.3" text-anchor="end">0.4</text>
+<line class="grid" x1="66" y1="60.7" x2="696" y2="60.7"/>
+<text class="tick" x="58" y="64.7" text-anchor="end">0.5</text>
+<line class="grid" x1="66" y1="16.0" x2="696" y2="16.0"/>
+<text class="tick" x="58" y="20.0" text-anchor="end">0.6</text>
+<line class="axis" x1="66" y1="284" x2="696" y2="284"/>
+<text class="axis-label" transform="rotate(-90 16 150)" x="16" y="150" text-anchor="middle">Score (0–1)</text>
+<text class="tick" x="66.0" y="302" text-anchor="middle">Before</text>
+<text class="tick" x="696.0" y="302" text-anchor="middle">After teaching 3 facts</text>
+<polyline class="series-line" points="66.0,181.6 696.0,153.3" style="stroke:var(--s1)"/>
+<circle class="dot" cx="66.0" cy="181.6" r="3.4" style="fill:var(--s1)"/>
+<circle class="dot" cx="696.0" cy="153.3" r="3.4" style="fill:var(--s1)"/>
+<polyline class="series-line" points="66.0,60.7 696.0,60.7" style="stroke:var(--s3)"/>
+<circle class="dot" cx="66.0" cy="60.7" r="3.4" style="fill:var(--s3)"/>
+<circle class="dot" cx="696.0" cy="60.7" r="3.4" style="fill:var(--s3)"/>
+</svg></div>
+<div class="legend"><span><i style="background:var(--s1)"></i>Declarative coverage</span><span><i style="background:var(--s3)"></i>Procedural competence</span></div>
+<figcaption><span class="fnum">Figure 1.</span> After teaching three additional connected facts, declarative coverage rose from 0.229 to 0.293, while procedural competence held at exactly 0.500 (change below 10<sup>&#8722;9</sup>). One axis moves; the other does not: the orthogonality the design requires.</figcaption></figure>
+
+<h3>5.2&ensp;Discrimination, routing, detection, pursuit</h3>
+<figure><div class="chart-title">All sixteen checks passed</div><div class="canvas"><svg class="chart" viewBox="0 0 720 330" role="img">
+<line class="grid" x1="66" y1="284.0" x2="696" y2="284.0"/>
+<text class="tick" x="58" y="288.0" text-anchor="end">0</text>
+<line class="grid" x1="66" y1="239.3" x2="696" y2="239.3"/>
+<text class="tick" x="58" y="243.3" text-anchor="end">1</text>
+<line class="grid" x1="66" y1="194.7" x2="696" y2="194.7"/>
+<text class="tick" x="58" y="198.7" text-anchor="end">2</text>
+<line class="grid" x1="66" y1="150.0" x2="696" y2="150.0"/>
+<text class="tick" x="58" y="154.0" text-anchor="end">3</text>
+<line class="grid" x1="66" y1="105.3" x2="696" y2="105.3"/>
+<text class="tick" x="58" y="109.3" text-anchor="end">4</text>
+<line class="grid" x1="66" y1="60.7" x2="696" y2="60.7"/>
+<text class="tick" x="58" y="64.7" text-anchor="end">5</text>
+<line class="grid" x1="66" y1="16.0" x2="696" y2="16.0"/>
+<text class="tick" x="58" y="20.0" text-anchor="end">6</text>
+<line class="axis" x1="66" y1="284" x2="696" y2="284"/>
+<text class="axis-label" transform="rotate(-90 16 150)" x="16" y="150" text-anchor="middle">Checks passed</text>
+<rect class="bar" x="97.5" y="150.0" width="63.0" height="134.0" rx="3" style="fill:var(--s1)"/>
+<text class="val" x="129.0" y="143.0" text-anchor="middle">3</text>
+<text class="tick" x="129.0" y="302" text-anchor="middle">H1</text>
+<text class="tick" x="129.0" y="315" text-anchor="middle">Discriminate</text>
+<rect class="bar" x="223.5" y="150.0" width="63.0" height="134.0" rx="3" style="fill:var(--s2)"/>
+<text class="val" x="255.0" y="143.0" text-anchor="middle">3</text>
+<text class="tick" x="255.0" y="302" text-anchor="middle">H2</text>
+<text class="tick" x="255.0" y="315" text-anchor="middle">Route</text>
+<rect class="bar" x="349.5" y="194.7" width="63.0" height="89.3" rx="3" style="fill:var(--s3)"/>
+<text class="val" x="381.0" y="187.7" text-anchor="middle">2</text>
+<text class="tick" x="381.0" y="302" text-anchor="middle">H3</text>
+<text class="tick" x="381.0" y="315" text-anchor="middle">Orthogonal</text>
+<rect class="bar" x="475.5" y="60.7" width="63.0" height="223.3" rx="3" style="fill:var(--s4)"/>
+<text class="val" x="507.0" y="53.7" text-anchor="middle">5</text>
+<text class="tick" x="507.0" y="302" text-anchor="middle">H4</text>
+<text class="tick" x="507.0" y="315" text-anchor="middle">Gap detect</text>
+<rect class="bar" x="601.5" y="150.0" width="63.0" height="134.0" rx="3" style="fill:var(--s5)"/>
+<text class="val" x="633.0" y="143.0" text-anchor="middle">3</text>
+<text class="tick" x="633.0" y="302" text-anchor="middle">H5</text>
+<text class="tick" x="633.0" y="315" text-anchor="middle">Pursue</text>
+</svg></div>
+<figcaption><span class="fnum">Figure 2.</span> Checks passed by hypothesis: discrimination 3/3, routing 3/3, orthogonality 2/2, declarative-gap detection 5/5, gap pursuit 3/3, 16/16 in total. Discrimination returns the correct gap type (0 actionable operations for a missing-operation gap; predicate-not-in-vocabulary for an unrepresented-predicate gap); routing sends the two to acquire-a-concept versus explore-for-an-operation.</figcaption></figure>
+
+<h3>5.3&ensp;A gap it detects, without fabricating gaps</h3>
+<p>Detecting a specific missing fact inside a mature subject isolates the one piece the two-axis framework calls for that the implementation had not yet supplied: the register of acknowledged ignorance was defined, but no producer wrote to it, so the register stayed empty and the gap went unregistered. That is the discriminating measurement; it locates the missing producer precisely, rather than attributing the miss to the axes themselves. With the detector added, a missing relation on a known concept registered exactly one acknowledged-unknown (count 0 &#8594; 1, information-value 0.6), which became one exploration target (entropy 0.94) routed to acquisition, while competence stayed at 0.500. Two negative controls confirm specificity.</p>
+<div class="tbl"><table>
+<caption><span class="fnum">Table 1.</span> Gap detection and its negative controls. The detector fires only for an in-subject, not-yet-held relation, and never disturbs the competence estimate.</caption>
+<thead><tr><th>Situation</th><th>Gap registered?</th><th class="num">Competence</th></tr></thead>
+<tbody>
+<tr><td>In-subject, relation not yet held</td><td>yes (0 &#8594; 1)</td><td class="num">0.500 (unchanged)</td></tr>
+<tr><td>Out-of-scope subject</td><td>no</td><td class="num">0.500 (unchanged)</td></tr>
+<tr><td>Relation already present</td><td>no</td><td class="num">0.500 (unchanged)</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="s6"><h2><span class="num">6</span>A third kind of not-knowing</h2>
+<p>The two axes classify a deficit as a missing fact or a missing operation, and route each to its own remedy. Work since this study identifies a third case that is neither, and that the framework&#8217;s own logic requires be told apart from both: the concept is represented, an operation is available, and what the system lacks is a <em>discriminating example</em>. Its evidence admits more than one hypothesis, and nothing in that evidence prefers any of them.</p>
+<p>The three are distinguished by signature, not by degree (Table&#160;2). A missing fact shows up as a concept absent from the subject&#8217;s vocabulary, and is closed by acquisition. A missing operation shows up as a represented concept with no producer, and is closed by practice or search. Undetermined evidence shows up as several surviving hypotheses that agree on some instances and disagree on others, and is closed by neither: no amount of practice narrows it, and acquiring an arbitrary further fact usually does not either. What closes it is one specific case, and the system can say which.</p>
+<div class="data-wrap"><table class="data">
+<thead><tr><th>Deficit</th><th>Signature</th><th>Correct response</th></tr></thead>
+<tbody>
+<tr><td>Missing fact</td><td class="mono">concept not in the subject&#8217;s vocabulary</td><td>acquire the concept</td></tr>
+<tr><td>Missing operation</td><td class="mono">concept represented, no producer for it</td><td>practise or search for an operation</td></tr>
+<tr><td>Undetermined evidence</td><td class="mono">several hypotheses survive and disagree</td><td>obtain the one case that separates them</td></tr>
+</tbody>
+</table></div>
+<div style="font-size:.82em;color:var(--muted);margin-top:-.6em">Table 2. Three typed deficits. The first two are the axes this paper measures; the third is distinguished from both by what closes it.</div>
+<p>The behaviour under the third deficit has been measured on the same substrate. Across 32 inductions, teaching sets whose positive examples shared an incidental feature left more than one hypothesis standing in every case, and teaching sets whose positives varied left exactly one in every case, so the condition is produced by the evidence rather than by the subject. Scored over 288 held-out cases, asserting on any one surviving hypothesis would have produced <strong>26</strong> assertions of cases that were false; asserting only what every surviving hypothesis supports produced <strong>none</strong>, while still asserting 73% of the true cases. The system does not guess its way out of an ambiguity it can detect.</p>
+<p>It also states what would end it. An undetermined induction reports the case that would eliminate one of its hypotheses, and supplying that case closed the ambiguity in <strong>sixteen of sixteen</strong> inductions, in a mean of 2.6 rounds, where supplying randomly chosen further examples under the same budget closed <strong>one</strong> of sixteen. This is the same discipline as the register of acknowledged ignorance in &#167;5.3, applied one level up: there the system records a fact it knows it lacks, and here it records an <em>experiment</em> it knows it needs. Both are entries in what the system honestly does not know, and both are actionable rather than merely reported.</p>
+</section>
+
+<section id="status"><h2><span class="num">7</span>Implementation status</h2>
+<p>The detector reported in &#167;5.3 is implemented and in service. The register of
+acknowledged ignorance is written by live producers on both the domain and the
+autonomous-reasoning paths, entries persist rather than living only for the duration of a
+run, and resolution is a first-class transition, so an acknowledged unknown that is later
+answered is closed rather than accumulating. The sixteen checks in &#167;5 run against
+that implementation.</p>
+<p>The before-and-after in &#167;5.3 is retained on purpose. The count 0 &#8594; 1
+movement, with competence held flat at 0.500 across it, is what shows the detector
+registers a declarative gap <em>without</em> disturbing the procedural axis: the
+orthogonality claim the paper is making. Reporting only the post-detector state would
+remove the evidence for it.</p>
+</section>
+
+<section id="s6"><h2><span class="num">8</span>Limitations and conclusion</h2>
+<p>The coverage measure is a specific normalized combination of size, density, and variety; other reasonable measures exist, and the absolute numbers are not the point: the separation of the two axes is. The subject is a small fictional taxonomy chosen for determinism; scaling the discrimination to large, real, partially-taught subjects is future work, as is a competence axis defined over many operation types rather than one. The third deficit in &#167;6 is characterised by what closes it and by the system&#8217;s behaviour under it; whether registering one leaves the competence axis untouched, as registering a declarative gap does, has not yet been measured and is the natural next check. The result we stand on is qualitative and robust: a taught system can hold two independent measures of mastery, decide which kind of gap it faces, and abstain honestly: a boundary a single-channel model does not represent.</p>
+</section>
+
+<hr class="sep">
+<section id="refs"><h2>References</h2>
+<ol class="refs">
+<li>G. Ryle. <em>The Concept of Mind</em>. Hutchinson, 1949.</li>
+<li>J. R. Anderson. <em>The Architecture of Cognition</em>. Harvard University Press, 1983. (Declarative vs. procedural memory.)</li>
+<li>R. El-Yaniv, Y. Wiener. On the foundations of noise-free selective classification. <em>JMLR</em>, 11, 2010.</li>
+<li>S. Muggleton. Inductive logic programming. <em>New Generation Computing</em>, 8(4), 1991.</li>
+<li>C. Guo, G. Pleiss, Y. Sun, K. Q. Weinberger. On calibration of modern neural networks. <em>ICML</em>, 2017.</li>
+</ol>
+</section>
+
+<div class="foot">Dominion Labs Research &#183; dmnlabs.org/research</div>
+</main>
+<footer class="paper-foot"><img src="assets/1.png" alt="Dominion Labs" width="96" height="92"><span>Dominion Labs</span></footer>
+</body>
+</html>
