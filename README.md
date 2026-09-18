@@ -4,8 +4,8 @@
 
 Stefan Ragland, Dominion Labs Research & Development. Published 13 January 2026.
 
-- Paper (PDF): [`paper/knowledge-and-competence.pdf`](paper/knowledge-and-competence.pdf)
-- Paper (web): <https://dmnlabs.org/research/knowledge-and-competence/>
+- Paper: <https://dmnlabs.org/research/knowledge-and-competence/>
+- Paper (offline copy): [`paper/knowledge-and-competence.html`](paper/knowledge-and-competence.html)
 - Contact: research@dmnlabs.org
 
 ## The argument
